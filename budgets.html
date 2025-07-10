@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budgets • KIC</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="dashboard-sidebar">
+      <div class="logo">
+        <span>KIC</span>
+      </div>
+      <a href="index.html">
+        <div class="sidebar-list">Dashboard</div>
+      </a>
+      <a href="allaccounts.html">
+        <div class="sidebar-list">All Accounts</div>
+      </a>
+      <a href="budgets.html">
+        <div class="sidebar-list">Budgets</div>
+      </a>
+      <div class="nametag">
+        <span>Jason Bahago</span>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <section class="main-items">
+        <div class="main-title">
+          <span>Budgets</span>
+        </div>
+        <div>
+          <button class="create-budget" id="create">Create a New Budget</button>
+        </div>
+        <div id="budget-collection" class="budget-collection"></div>
+      </section>
+    </main>
+
+    <aside class="budget-popup-form" id="budgetpopup">
+      <div class="budget-popup-form-content" id="popupform">
+        <span id="close">&times;</span>
+        <form id="budgetForm">
+          <h1>Add New Budget</h1>
+          <h3>General Info</h3>
+          <label for="">Budget Name</label>
+          <input type="text" id="budgetName" name="budgetName" />
+          <label for="">Amount</label>
+          <input type="number" min="0" id="budgetAmount" name="budgetAmount" />
+          <h3>Budget Filter</h3>
+          <label for="">Budgeted for</label>
+          <select name="budgetCategories" id="budgetCategories">
+            <option value="All">All Categories</option>
+            <option value="Bills">Bills</option>
+            <option value="Food">Food & Drink</option>
+            <option value="Transport">Transport</option>
+            <option value="Subcriptions">Subscriptions</option>
+            <option value="Miscelleanious">Miscelleanious</option>
+            <option value="Others">Others</option>
+          </select>
+          <h3>Budget Period</h3>
+          <label for="">Recurrence</label>
+          <button type="button" class="recurrence-btn" value="once">
+            Once
+          </button>
+          <button type="button" class="recurrence-btn" value="daily">
+            Daily
+          </button>
+          <button type="button" class="recurrence-btn" value="weekly">
+            Weekly
+          </button>
+          <button type="button" class="recurrence-btn" value="biweekly">
+            Biweekly
+          </button>
+          <button type="button" class="recurrence-btn" value="monthly">
+            Monthly
+          </button>
+          <button type="button" class="recurrence-btn" value="yearly">
+            Yearly
+          </button>
+          <label for="">Start Date</label>
+          <input
+            type="date"
+            name="startDate"
+            id="startDate"
+            class="budget-start-date"
+          />
+          <input type="submit" value="Create a Budget" />
+        </form>
+      </div>
+    </aside>
+
+    <script src="budget.js"></script>
+  </body>
+</html>

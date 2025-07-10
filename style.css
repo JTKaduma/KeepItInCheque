@@ -1,0 +1,338 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: whitesmoke;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(249, 235, 234);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.nametag {
+  font-size: 1.2rem;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.dashboard-sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 3vh;
+  background-color: rgb(52, 152, 219);
+  color: rgb(249, 235, 234);
+  width: 20%;
+  height: 100vh;
+}
+
+.sidebar-list {
+  width: 100%;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-list:hover {
+  background-color: hsl(204, 70%, 45%);
+}
+
+.sidebar-list:active {
+  background-color: hsl(204, 70%, 40%);
+}
+
+.sidebar-list,
+.logo,
+.nametag {
+  padding-left: 3vw;
+}
+
+.nametag,
+.sidebar-list {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.month-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.dashboard-main {
+  width: 100%;
+  padding: 3vh 3vw;
+}
+
+.month-changer {
+  color: rgb(52, 152, 219);
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
+  border: 2px solid rgb(52, 152, 219);
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.month-changer:hover {
+  background-color: rgb(52, 152, 219);
+  color: rgb(249, 235, 234);
+}
+
+.selected-month-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 10vw;
+  text-align: center;
+  padding: 2vh 0vw;
+}
+
+.main-title {
+  font-size: 2rem;
+  padding: 2vh 0vw;
+  font-weight: bold;
+}
+
+.main-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-item-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+}
+
+.total-cards {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  width: 15vw;
+  padding: 1vh 1vw;
+}
+
+.total-cards span {
+  font-size: 1rem;
+}
+
+.total-cards p span {
+  color: hsl(120, 100%, 45%);
+  font-size: 1.5rem;
+}
+
+.dashboard-main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 0.5px solid grey;
+  padding: 0.5vh 5vw 0.5vh 1vw;
+  text-align: left;
+}
+
+.accountables-collection {
+  margin: 2vh 0;
+  width: 100%;
+}
+
+.accountables {
+  color: rgb(52, 152, 219);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.create-budget {
+  font-size: 1.2rem;
+  background-color: rgb(52, 152, 219);
+  color: rgb(249, 235, 234);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.create-budget:hover {
+  background-color: hsl(204, 70%, 45%);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+}
+
+.budget-popup-form {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.budget-popup-form-content {
+  margin: 15% auto;
+  background-color: rgb(249, 235, 234);
+  width: 65%;
+  border-radius: 10px;
+  padding: 2vh 3vw;
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+#close {
+  font-size: 1.2rem;
+  float: right;
+  cursor: pointer;
+  background-color: grey;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  top: -25px;
+  right: -45px;
+}
+
+.recurrence-btn {
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(215, 222, 232);
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.recurrence-btn:hover {
+  background-color: rgb(180, 200, 220);
+}
+
+.rec-active {
+  background-color: rgb(52, 152, 219);
+  color: rgb(249, 235, 234);
+}
+
+.budget-collection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 3vh 0;
+}
+
+.budget-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  padding: 2vh 1vw;
+}
+
+.budget-name {
+  font-size: 1.5rem;
+}
+
+.over {
+  color: red;
+}
+
+.under {
+  color: green;
+}
+
+.urgent {
+  color: red;
+}
+
+.name {
+  font-size: 1.4rem;
+  color: rgb(52, 152, 219);
+  font-weight: 500;
+}
+
+.amount {
+  font-size: 1.8rem;
+  color: hsl(120, 100%, 45%);
+}
+
+.duration {
+  font-size: 1rem;
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: rgb(180, 200, 220);
+  border-radius: 15px;
+  padding: 1vh 1vw;
+}
+
+.date-account-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date-heading {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1.5);
+}
+
+.amount-heading {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.income {
+  font-weight: 500;
+  color: green;
+}
+
+.expense {
+  font-weight: 500;
+  color: red;
+}
+
+#expenseCategory {
+  display: none;
+}

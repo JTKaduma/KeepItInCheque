@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard • KIC</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="dashboard-sidebar">
+      <div class="logo">
+        <span>KIC</span>
+      </div>
+      <a href="index.html">
+        <div class="sidebar-list">Dashboard</div>
+      </a>
+      <a href="allaccounts.html">
+        <div class="sidebar-list">All Accounts</div>
+      </a>
+      <a href="budgets.html">
+        <div class="sidebar-list">Budgets</div>
+      </a>
+      <div class="nametag">
+        <span>Jason Bahago</span>
+      </div>
+    </aside>
+    <main class="dashboard-main">
+      <div class="dashboard-main-header">
+        <div class="month-display">
+          <button class="month-changer" id="prevBtn">&#10094</button>
+          <span class="selected-month-display" id="currentMonth"></span>
+          <button class="month-changer" id="nextBtn">&#10095</button>
+        </div>
+      </div>
+
+      <section class="main-items">
+        <div class="main-title">
+          <span>Overview</span>
+        </div>
+        <div class="main-item-cards">
+          <div class="total-cards">
+            <span>Total Period Balance</span>
+            <p><span id="total-balance"></span><span>NGN</span></p>
+          </div>
+          <div class="total-cards">
+            <span>Total Period Expenses</span>
+            <p><span id="total-period-expense"></span><span>NGN</span></p>
+          </div>
+          <div class="total-cards">
+            <span>Total Period Income</span>
+            <p><span id="total-period-income"></span><span>NGN</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

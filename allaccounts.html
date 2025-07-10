@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accounts • KIC</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="dashboard-sidebar">
+      <div class="logo">
+        <span>KIC</span>
+      </div>
+      <a href="index.html">
+        <div class="sidebar-list">Dashboard</div>
+      </a>
+      <a href="allaccounts.html">
+        <div class="sidebar-list">All Accounts</div>
+      </a>
+      <a href="budgets.html">
+        <div class="sidebar-list">Budgets</div>
+      </a>
+      <div class="nametag">
+        <span>Jason Bahago</span>
+      </div>
+    </aside>
+
+    <main class="dashboard-main">
+      <section class="main-items">
+        <div class="main-title">
+          <span>Accounts</span>
+        </div>
+        <div class="accountables-collection">
+          <span class="accountables" id="add-transcation">Add Transcation</span>
+        </div>
+        <div id="accountInfo" class="account-info">
+          <p class="date-account-row">
+            <span class="date-heading">Jul 30, 2025</span
+            ><span class="amount-heading">+5000.00 NGN</span>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="budget-popup-form" id="budgetpopup">
+      <div class="budget-popup-form-content" id="popupform">
+        <span id="close">&times;</span>
+        <form id="transactionForm">
+          <select name="Category" id="category" required>
+            <option value="Income" selected>Income</option>
+            <option value="Expenses">Expenses</option>
+          </select>
+          <select name="incomeType" id="incomeCategory">
+            <option value="Salary">Salary</option>
+            <option value="Allowance">Allowance</option>
+            <option value="Gifts">Gifts</option>
+            <option value="Others">Others</option>
+          </select>
+          <select name="expenseType" id="expenseCategory">
+            <option value="Transfer">Transfer</option>
+            <option value="Bills">Bills</option>
+            <option value="Food">Food & Drink</option>
+            <option value="Transport">Transport</option>
+            <option value="Subcriptions">Subscriptions</option>
+            <option value="Miscelleanious">Miscelleanious</option>
+            <option value="Others">Others</option>
+          </select>
+          <label for="">Date</label>
+          <input type="date" name="date" />
+          <label for="">Amount</label>
+          <input type="number" min="0" name="amount" />
+          <input type="submit" value="Add Transcation" />
+        </form>
+      </div>
+    </aside>
+
+    <script src="accounts.js"></script>
+  </body>
+</html>
